@@ -1,0 +1,29 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static "css/reset.css" %}">
+      <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+  </head>
+  <body>
+  <div class="inner">
+      <form action="" method="get" class="search">
+	    <input type="search" name="q" placeholder="поиск" class="input" />
+	    <input type="submit" class="submit" value=""/>
+    </form>
+  </div>
+
+
+    <ul class="return">
+      {% if sentences|length != 0 %}
+      <p class="count">{{ sentences|length|add:"-1" }} результатов поиска</p>
+      {% endif %}
+        {% for sentence in sentences %}
+      <li class="return__answer">{{ sentence }}</li>
+      <br />
+      {% endfor -%}
+    </ul>
+  </body>
+</html>
