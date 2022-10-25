@@ -11,4 +11,3 @@ class News(models.Model):
     post_date = models.DateField()
     post_id = models.CharField(max_length=63)
 
-
