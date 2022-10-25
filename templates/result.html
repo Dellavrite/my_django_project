@@ -21,7 +21,7 @@
         <ul class="return">
           <p class="count">{{ sentences|length}} результатов поиска</p>
           {% for post in posts %}
-              {{ post }}
+              <li class="return__answer"><a href="{{ post.post_link }}">{{ post.post_name }}</a></li>
           <br />
           {% endfor -%}
         </ul>

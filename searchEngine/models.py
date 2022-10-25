@@ -11,7 +11,4 @@ class News(models.Model):
     post_date = models.DateField()
     post_id = models.CharField(max_length=63)
 
-    def __str__(self):
-        return fr"""
-            <a href="{self.post_link}">{self.post_name}</a>
-        """
+
