@@ -9,7 +9,8 @@ from searchEngine.utils import engine
 def index(request):
     if 'q' in request.GET:
         posts = engine(request.GET['q'])
-        context = {"posts": posts}
+        context = {"posts": posts,
+                   "posts_count": posts.count()}
         return render(request, "result.html", context=context)
     else:
         return render(request, "index.html")
