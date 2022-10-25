@@ -8,8 +8,8 @@ from searchEngine.utils import engine
 # Create your views here.
 def index(request):
     if 'q' in request.GET:
-        sentences_info = engine(request.GET['q'])
-        context = {"sentences": sentences_info}
-        return render(request, "index.html", context=context)
+        posts = engine(request.GET['q'])
+        context = {"posts": posts}
+        return render(request, "result.html", context=context)
     else:
         return render(request, "index.html")

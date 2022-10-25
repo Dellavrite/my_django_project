@@ -9,9 +9,8 @@ from searchEngine.models import News
 
 def engine(word):
     morph = pymorphy2.MorphAnalyzer()
-    res = [" "]
     morph_words = [f"'{x.word}'" for x in morph.parse(word.lower())[0].lexeme]
     vector = SearchVector("post_name")
     query = SearchQuery(f"({' | '.join(morph_words)})", search_type="raw")
-    res.extend(News.objects.annotate(search=vector).filter(search=query))
+    res = News.objects.annotate(search=vector).filter(search=query)
     return res

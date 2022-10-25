@@ -4,8 +4,7 @@
   <head>
     <title>Search</title>
     <link rel="stylesheet" href="{% static "css/reset.css" %}">
-      <link rel="stylesheet" href="{% static "css/style.css" %}">
-
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
   </head>
   <body>
   <div class="inner">
@@ -16,14 +15,6 @@
   </div>
 
 
-    <ul class="return">
-      {% if sentences|length != 0 %}
-      <p class="count">{{ sentences|length|add:"-1" }} результатов поиска</p>
-      {% endif %}
-        {% for sentence in sentences %}
-      <li class="return__answer">{{ sentence }}</li>
-      <br />
-      {% endfor -%}
-    </ul>
+
   </body>
 </html>
