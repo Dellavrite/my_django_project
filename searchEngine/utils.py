@@ -8,6 +8,7 @@ from searchEngine.models import News
 
 
 def engine(word):
+    word += " "
     morph = pymorphy2.MorphAnalyzer()
     morph_words = [f"'{x.word}'" for x in morph.parse(word.lower())[0].lexeme]
     vector = SearchVector("post_name")
