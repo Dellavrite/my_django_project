@@ -19,7 +19,7 @@
 
     <div class="container">
         <ul class="return">
-          <p class="count">{{ sentences|length|add:"-1" }} результатов поиска</p>
+          <p class="count">{{ sentences|length}} результатов поиска</p>
           {% for post in posts %}
           <li class="return__answer">{{ post }}</li>
           <br />
