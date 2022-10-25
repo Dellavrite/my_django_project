@@ -12,5 +12,6 @@ def run():
         News.objects.all().delete()
 
         for news in read_file:
+            print(news)
             News.objects.create(post_link=news[0], post_name=news[1], sender_name=news[2],
                                 sender_link=[3], post_date=[4], post_id=[5])
