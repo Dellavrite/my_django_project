@@ -10,6 +10,7 @@ from searchEngine.models import News
 def engine(word):
     morph = pymorphy2.MorphAnalyzer()
     res = [" "]
-    morph_words = [x.word for x in morph.parse(word.lower())[0].lexeme]
-    res.extend(News.objects.filter(post_name__search=" ".join(morph_words)))
+    morph_words = [f"'{x.word}'" for x in morph.parse(word.lower())[0].lexeme]
+    query = SearchQuery(f"({' | '.join(morph_words)})", search_type="raw")
+    res.extend(News.objects.filter(post_name__search=query))
     return res
