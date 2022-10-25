@@ -10,3 +10,6 @@ class News(models.Model):
     sender_link = models.CharField(max_length=255)
     post_date = models.DateField()
     post_id = models.CharField(max_length=63)
+
+    def __str__(self):
+        return str(self.post_name)
