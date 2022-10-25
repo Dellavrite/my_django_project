@@ -1,10 +1,12 @@
 import csv
 import os
+
+from djangoProject.settings import BASE_DIR
 from searchEngine.models import News
 
 
 def run():
-    with open(f"merged.csv") as f:
+    with open(os.path.join(BASE_DIR, 'static', 'merged.csv')) as f:
         read_file = csv.reader(f)
 
         News.objects.all().delete()
