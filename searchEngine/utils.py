@@ -11,7 +11,5 @@ def engine(word):
     morph = pymorphy2.MorphAnalyzer()
     res = [" "]
     morph_words = [x.word for x in morph.parse(word.lower())[0].lexeme]
-    query = SearchQuery(" ".join(morph_words))
-    res.extend(News.objects.filter(post_name__search=query))
+    res.extend(News.objects.filter(post_name__search=" ".join(morph_words)))
     return res
-
