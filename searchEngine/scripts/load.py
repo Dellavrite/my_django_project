@@ -4,7 +4,7 @@ from searchEngine.models import News
 
 
 def run():
-    with open('~/Project/data/merged.csv') as f:
+    with open('/data/merged.csv') as f:
         read_file = csv.reader(f)
 
         News.objects.all().delete()
