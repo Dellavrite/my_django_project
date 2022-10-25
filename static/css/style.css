@@ -1,6 +1,7 @@
 .container{
-	max-width: 1200px;
+	max-width: 1240px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
 
 .return{
@@ -20,12 +21,16 @@
 .search {
 	/* устанавливаем необходимую ширину формы в зависимости от дизайна
 	** форма без проблем растягивается */
-	width: 350px;
-
+	width: 600px;
 	/* кнопку отправки будем позиционировать абсолютно,
 	** поэтому необходимо это свойство */
 	position: relative;
 
+}
+@media (max-width: 500px) {
+	.search{
+		width: 350px;
+	}
 }
 
 .search input {
