@@ -4,6 +4,7 @@
 while :
 do
   python3 ~/Project/my_django_project/manage.py runscript create_post_id
+  mv ~/Project/my_django_project/static/post_ids.csv ~/Project/temp
 
   cd ~/Project/News_Crawler/starters
   screen -S spyder_hi-tech_crawl -d -m  bash start_hi_tech_crawl.sh
