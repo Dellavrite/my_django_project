@@ -13,5 +13,5 @@ def engine(word):
     morph_words = [f"'{x.word}'" for x in morph.parse(word.lower())[0].lexeme]
     vector = SearchVector("post_name")
     query = SearchQuery(f"({' | '.join(morph_words)})", search_type="raw")
-    res = News.objects.annotate(search=vector).filter(search=query)
+    res = News.objects.annotate(search=vector).filter(search=query).order_by("post_date")
     return res
