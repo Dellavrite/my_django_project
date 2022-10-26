@@ -10,6 +10,8 @@ do
   screen -S spyder_hi-tech_crawl -d -m  bash start_hi_tech_crawl.sh
   screen -S spyder_habr_news -d -m  bash start_habr_news.sh
 
+  sleep 5
+
   last_screen_line=$(screen -ls | tail -1)
   while ! [ "${last_screen_line::1}" == "2" ]; do
       last_screen_line=$(screen -ls | tail -1)
