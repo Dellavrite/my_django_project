@@ -16,7 +16,7 @@ do
   while ! [ "${last_screen_line::1}" == "2" ]; do
       last_screen_line=$(screen -ls | tail -1)
       echo "Wait please"
-      sleep 600
+      sleep 5
   done
 
   cd ~/Project/data/
