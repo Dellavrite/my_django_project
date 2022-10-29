@@ -2,29 +2,34 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static "css/reset.css" %}">
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
-</head>
-<body>
-
+    <link rel="stylesheet" href="{% static "css/reset.css" %}"> <link
+    rel="stylesheet" href="{% static "css/style.css" %}">
+  </head>
+  <body>
     <div class="inner">
       <form action="" method="get" class="search">
-	    <input type="search" name="q" placeholder="поиск" class="input" />
-	    <input type="submit" class="submit" value=""/>
-    </form>
-  </div>
+        <input type="search" name="q" placeholder="поиск" class="input" />
+        <input type="submit" class="submit" value="" />
+      </form>
+    </div>
 
     <div class="container">
-        <ul class="return">
-          <p class="count">{{ posts_count }} результатов поиска</p>
-          {% for post in posts %}
-              {% block new %}{% endblock %}
-          {% endfor -%}
-        </ul>
+      <ul class="return">
+        <p class="count">{{ posts_count }} результатов поиска</p>
+        {% for post in posts %}
+        <div class="block">
+          <a href="{{ post.post_link }}" class="title">{{ post.post_name }}</a>
+          <div class="info">
+            <a href="{{ post.sender_link }}" class="sender">{{ post.sender_name }}</a>
+            <div class="date">post.post_date</div>
+          </div>
+        </div>
+        {% endfor -%}
+      </ul>
     </div>
-</body>
+  </body>
 </html>
