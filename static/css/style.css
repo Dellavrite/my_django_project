@@ -1,5 +1,5 @@
 .container{
-	max-width: 1240px;
+	max-width: 940px;
 	margin: 0 auto;
 	padding: 0 20px;
 }
@@ -100,16 +100,25 @@ input[type="search"] {
 }
 
 .block{
-	border: #000 solid 1px;
-	padding: 10px;
+	border: rgba(0, 0, 0, .66) solid 1px;
+	padding: 15px 35px;
 }
 
 .info{
 	display: flex;
 	margin-top: 30px;
+	color: gray;
+}
+
+.sender:hover{
+	opacity: .77;
 }
 
 .title{
 	font-size: 23px;
 	font-weight: 700;
+}
+
+.title:hover{
+	opacity: .77;
 }
