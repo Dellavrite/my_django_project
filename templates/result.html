@@ -22,8 +22,7 @@
         <ul class="return">
           <p class="count">{{ posts_count }} результатов поиска</p>
           {% for post in posts %}
-              <li class="return__answer"><a href="{{ post.post_link }}">{{ post.post_name }}</a></li>
-          <br />
+              {% block new %}{% endblock %}
           {% endfor -%}
         </ul>
     </div>
