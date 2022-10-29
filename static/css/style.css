@@ -7,6 +7,7 @@
 
 .count{
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .inner{
@@ -110,8 +111,13 @@ input[type="search"] {
 	color: gray;
 }
 
+.sender{
+	margin-right: 5px;
+	transition: opacity .5s;
+}
+
 .sender:hover{
-	opacity: .77;
+	opacity: .55;
 }
 
 .title{
@@ -119,6 +125,10 @@ input[type="search"] {
 	font-weight: 700;
 }
 
+.title{
+	transition: opacity .5s;
+}
+
 .title:hover{
-	opacity: .77;
+	opacity: .55;
 }
